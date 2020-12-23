@@ -9,8 +9,8 @@ app.get('/', (req, res) => {
 http.listen(3000);
 
 mongoose.connect('mongodb://127.0.0.1:27017/game-app-api', {
-    userNewUrlParser: true,
-    userCreateIndex: true
+    useNewUrlParser: true,
+    useCreateIndex: true
 }). then(() => {
     console.log("Database Connection Successful!");
 }). catch((error) => {
