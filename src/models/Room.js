@@ -1,9 +1,27 @@
 const mongoose = require('mongoose')
 
 const RoomSchema = new mongoose.Schema({
-  roomName: String,
-  questionsArray: Array,
-  answersObject: Object
+  roomName: {
+    type: String
+  },
+  questionsArray: {
+    type: Array
+  },
+  answersObject: {
+    type: Array
+  }
 })
 
-module.exports = mongoose.model('Room', RoomSchema)
+const Room = mongoose.model('Room', RoomSchema)
+
+module.exports = Room
+
+const room = new Room ({
+  roomName: "room",
+  questionsArray: [],
+  answersObject: []
+})
+
+room.save().then(() => {
+  console.log("Success!")
+})

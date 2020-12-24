@@ -1,4 +1,3 @@
-const { request, response } = require('express');
 const express = require('express');
 const router = express.Router();
 const Player = require ('../models/Player');
@@ -13,8 +12,8 @@ router.post('/', (request, response) => {
     });
 });
 
-router.delete(':id', (request, response) => {
-    Player.findByIdAndDelete(request.params.id, (error, post) => {
+router.delete('/:id', (request, response) => {
+    Player.findByIdAndRemove(request.params.id, (error, post) => {
         if (error) {
             console.log(error);
         } else {

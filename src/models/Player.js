@@ -6,6 +6,6 @@ const PlayerSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId, ref: 'Room'
   },
   host: Boolean
-})
+});
 
 module.exports = mongoose.model('Player', PlayerSchema)

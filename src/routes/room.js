@@ -15,6 +15,7 @@ router.get('/:id', (req, res) => {
 router.post('/', (req, res) => {
   Room.create(req.body, (err, post) => {
     if (err) {
+      console.log("POST")
       console.log(err);
     } else {
       res.json(post);
@@ -27,7 +28,7 @@ router.put('/:id', (req, res) => {
     if (err) {
       console.log(err);
     } else {
-      res.json(post);
+      res.json(req.body);
     }
   });
 });
